@@ -1,5 +1,6 @@
 variable "vpc_name" {
   type = string
+  default = "vpc-terraform"
 }
 
 resource "aws_vpc" "minha_vpc" {
@@ -7,7 +8,7 @@ resource "aws_vpc" "minha_vpc" {
   instance_tenancy = "default"
 
   tags = {
-    Name = "var.vpc_name"
+    Name = var.vpc_name
   }
 
 }
